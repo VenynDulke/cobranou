@@ -223,61 +223,48 @@
             border: 2px solid #525252;
         }
 
-        .marquee-banner {
+        /* Estilos heredados exactamente de Gif.html para compatibilidad visual */
+        .Mesaj {
             margin: 20px auto;
             padding: 5px;
             width: 95%;
-            height: 35px;
+            height: 30px;
             text-align: center;
+            background-repeat: repeat;
+            background-size: 1850px 50px;
             border-radius: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             border: 2px solid #525252;
-            box-shadow: rgba(0, 0, 0, 0.5) 0px 8px 24px;
+            position: relative;
+            box-shadow: rgba(82, 82, 82, 0.1) 0px 8px 24px, rgba(82, 82, 82, 0.1) 0px 16px 56px, rgba(82, 82, 82, 0.1) 0px 24px 80px;
+        }
+
+        .Mesaj marquee {
             font-family: 'Agbalumo', cursive;
             color: #fff;
             text-shadow: 0 0 5px #f00;
             font-size: 20px;
-            display: flex;
-            align-items: center;
+            width: 100%;
         }
 
-        .gif-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-            gap: 15px;
-            justify-items: center;
-            padding: 10px 0;
+        /* Convertimos el Table rígido en uno responsivo para todos los navegadores */
+        #gifs-galleries-container table {
+            width: 100%;
+            border-collapse: collapse;
         }
-
-        .gif-item {
-            width: 110px;
-            height: 120px;
-            background-color: #1b1b1b;
-            border: 1px solid rgb(82, 82, 82);
-            border-radius: 15px;
+        
+        #gifs-galleries-container tbody {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            flex-wrap: wrap;
             justify-content: center;
-            overflow: hidden;
-            transition: transform 0.2s;
+            width: 100%;
         }
-
-        .gif-item:hover {
-            transform: scale(1.1);
-            border-color: #fff;
-        }
-
-        .gif-item span {
-            color: #ffffff;
-            font-weight: bold;
-            font-size: 13px;
-            margin-bottom: 5px;
-        }
-
-        .gif-item img {
-            max-width: 80px;
-            max-height: 80px;
-            object-fit: contain;
+        
+        #gifs-galleries-container td {
+            display: block;
+            padding: 7px; /* Espaciado idéntico al visualizado en la tabla */
         }
 
         /* Notificación Toast de Copyright */
@@ -328,7 +315,6 @@
             <p>Te espero en xat.com/fondos</p>
             
             <div class="profile-buttons">
-                <!-- Botón que cambia de vista en lugar de abrir nueva pestaña -->
                 <button class="btn-style" onclick="toggleView('gifs')">Galería de Gifs</button>
                 <a class="btn-style" href="https://www.flickr.com/groups/pcback-by-xdesignx-id-1515147447/pool/" target="_blank">PcBack</a>
                 <a class="btn-style" href="https://www.flickr.com/groups/background-by-xdesignx-id-1515147447/pool/" target="_blank">Fondos</a>
@@ -365,12 +351,12 @@
                 <button class="btn-style" onclick="toggleView('profile')" style="background-color: #d9534f; margin: 0;">⬅ Volver al Perfil</button>
             </div>
 
-            <!-- Efecto Canvas Text Glow -->
+            <!-- Efecto Canvas Text Glow idéntico al de Gif.html -->
             <div class="canvas-container" id="canvasContainer">
                 <canvas id="canvas" height="150"></canvas>
             </div>
 
-            <!-- Contenedor donde se inyectarán los GIFs -->
+            <!-- Contenedor donde se inyectarán las TABLAS ORIGINALES de los GIFs -->
             <div id="gifs-galleries-container"></div>
         </div>
 
@@ -380,7 +366,7 @@
     </div>
 
     <!-- Contenedor para el mensaje de Copyright -->
-    <div id="copyright-toast">⚠️ Made ByDesign, Stop Copyright ⚠️</div>
+    <div id="copyright-toast">⚠️ Stop Copyright ByDesign ⚠️</div>
 
     <script>
         // ==========================================
@@ -409,7 +395,7 @@
         }
 
         // ==========================================
-        // GENERADOR DE GALERÍA DE GIFS
+        // GENERADOR DE GALERÍA DE GIFS (TABLAS EXACTAS)
         // ==========================================
         const categories = [
             {
@@ -417,21 +403,53 @@
                 bgUrl: "https://xatimg.com/image/E325sIbO98c9.gif",
                 prefix: "New - ",
                 count: 80,
-                ids: ["kCHPefP", "QkhkYXo", "LyUeb2P", "bpD4knA", "6M1IatR", "PnNRIRp", "xSfIc0i", "G5KUUU6", "wk9x2tw", "ceUKI7W", "HWVjruy", "wFkwFsX", "yWkfDty", "mletRiu", "YvqCkKE", "ePic3W3", "JSi1q0q", "RPbYpBL", "ExFe6iv", "2LwXYtA", "4h804a0", "8EDNM1L", "zc3oHtB", "f3EL9VX", "P9V2kA7", "oLNbQe6", "qgE8LxH", "GEeU7QH", "E40aqN9", "Bu5ktFZ", "VQdrW6O", "n9SnGTA", "Yc7YWGR", "ngBrFUT", "5zVy7Gn", "vCNHIOr", "6pUm6z7", "FJKvbon", "6maXR0q", "WhV0YBq", "zTV5rDb", "MXQP96b", "qf653hR", "LoTu3WO", "LixtvqW", "GCSPd8R", "mw9IlIs", "PXz3sef", "Uk65EWw", "DUxUjju", "GddNFrX", "fmNNEev", "28xWcym", "lZLq1wZ", "Crf2TeQ", "lF7ai1B", "TUy90JQ", "EThwGWl", "Loycdqf", "R3VLKBg", "SZkfl8R", "m1bvgGW", "O72Yruj", "hwHHlLM", "OjC0FxI", "oPEYrAi", "", "cniolLC"]
+                ids: [
+                    "kCHPefP", "QkhkYXo", "LyUeb2P", "bpD4knA", "6M1IatR", "PnNRIRp", "xSfIc0i", "G5KUUU6", "wk9x2tw", "ceUKI7W", 
+                    "HWVjruy", "wFkwFsX", "yWkfDty", "mletRiu", "YvqCkKE", "ePic3W3", "JSi1q0q", "RPbYpBL", "ExFe6iv", "2LwXYtA", 
+                    "4h804a0", "8EDNM1L", "zc3oHtB", "f3EL9VX", "P9V2kA7", "oLNbQe6", "qgE8LxH", "GEeU7QH", "E40aqN9", "Bu5ktFZ", 
+                    "VQdrW6O", "n9SnGTA", "Yc7YWGR", "ngBrFUT", "5zVy7Gn", "vCNHIOr", "6pUm6z7", "FJKvbon", "6maXR0q", "WhV0YBq", 
+                    "zTV5rDb", "MXQP96b", "qf653hR", "LoTu3WO", "LixtvqW", "GCSPd8R", "mw9IlIs", "PXz3sef", "Uk65EWw", "DUxUjju", 
+                    "GddNFrX", "fmNNEev", "28xWcym", "lZLq1wZ", "Crf2TeQ", "lF7ai1B", "TUy90JQ", "EThwGWl", "Loycdqf", "R3VLKBg", 
+                    "SZkfl8R", "m1bvgGW", "O72Yruj", "hwHHlLM", "OjC0FxI", "oPEYrAi", "", "cniolLC"
+                ]
             },
             {
                 marquee: "◦•●◉👑𝑮𝒊𝒇𝒔 for Girls👑◉●•◦",
                 bgUrl: "https://xatimg.com/image/E325sIbO98c9.gif",
                 prefix: "Girls - ",
                 count: 160,
-                ids: ["hljCHn0", "iPNKu8I", "jrhJ9sQ", "D2hTohw", "oA4sgqt", "YTYq7OD", "n5p2E2P", "3UD4XlM", "Tg7W0LL", "gXW8FH7", "l3QJXgL", "dlZzgeM", "jNpzP8i", "zc3eY7Z", "yU6yqeY", "MAJx1v0", "z5koUrZ", "ajBigWC", "uHG384A", "xs1kO1v", "WSuhXTu", "0c4sf5l", "KhXXHRX", "ZYaq0Bt", "tjVoTWm", "Kx3eVnH", "zfpFc0A", "5iM7gQc", "VwzUKXO", "ZMmMdHu", "RRATvoT", "0968338", "ScwX2Sv", "PIh7bwF", "0ROUn89", "zKBHrro", "NM241AE", "xQJp9wy", "xQPAC11", "cu1hNRa", "sBnZxNs", "8INdOsC", "hXB3F3n", "QDABLUC", "zmuvx3y", "AMesDKy", "58GJz5L", "VOWb9I2", "c2dUY15", "zJkz3e9", "XeMZCHN", "97xe3Dt", "mAIhWet", "IhitbRa", "QCC3mM9", "safiJWf", "Pjdh7wA", "phT5aCv", "ge95rJA", "Q0PPlBv", "nRx0Q92", "SGkO1pK", "6Fy84K5", "g5X0Rf7", "lmjn7AV", "G67ztcQ", "Q3DZG4r", "61NIDPD", "MJRbWU2", "azK1pdo", "zZX3aPR", "TZqGXAs", "b4KKgqa", "QD2aTju", "QkzMOdY", "QWcXFwT", "nYdhej3", "RzQZjMh", "4y6fWgu", "lh70FEu", "DOUxCAL", "VnJ9OzG", "NYC8pII", "U1x9gXv", "ZucTPyh", "HUjQxNI", "990QsjZ", "5xJKDXt", "il1i8PI", "t2hV0yU", "nbGGLyp", "AuW5aEi", "5XE8t7a", "0RJQfgL", "1g7uriO", "X7hYsz5", "l8XqWZI", "6aBV4Av", "MpHWoFp", "eiWLyvq", "TAFtumH", "MgybwWH", "GcJ26xH", "M4PYkas", "rGYp7le", "e8lRhDB", "hKz3xRV", "t1oSaUF", "zCJejfQ", "BhI9Dlk", "pHrsg60", "mkpnAJr", "BgecBgN", "HNjo15T", "JXdnDRy", "9IYRMVa", "BI8Hm4p", "vF9QqkZ", "4w9Ul0n", "9IQgTVt", "rcNYyvR", "9QyIStJ", "RX22QkK", "Yaa8V9q", "K5bqyAb", "gEHkfsy", "34z4Ddu", "W7rjDOq", "5rbixh4", "vSf8LwZ", "BifRlbI", "pSlfHBx", "dI1IJIv", "ClEfL14", "Aa6wBTq", "rwq3PVT", "Yz0tsk0", "kxyilF1", "KDL5J9Q", "OydaR24", "cieRDxo", "PD49Qgp", "XD6r8hy", "GuNLwe7", "k8c4xBX", "dwVv3Np", "Ppe0d7W", "lxdNE2N", "jIROKzV", "QRvQqnP"]
+                ids: [
+                    "hljCHn0", "iPNKu8I", "jrhJ9sQ", "D2hTohw", "oA4sgqt", "YTYq7OD", "n5p2E2P", "3UD4XlM", "Tg7W0LL", "gXW8FH7", 
+                    "l3QJXgL", "dlZzgeM", "jNpzP8i", "zc3eY7Z", "yU6yqeY", "MAJx1v0", "z5koUrZ", "ajBigWC", "uHG384A", "xs1kO1v", 
+                    "WSuhXTu", "0c4sf5l", "KhXXHRX", "ZYaq0Bt", "tjVoTWm", "Kx3eVnH", "zfpFc0A", "5iM7gQc", "VwzUKXO", "ZMmMdHu", 
+                    "RRATvoT", "0968338", "ScwX2Sv", "PIh7bwF", "0ROUn89", "zKBHrro", "NM241AE", "xQJp9wy", "xQPAC11", "cu1hNRa", 
+                    "sBnZxNs", "8INdOsC", "hXB3F3n", "QDABLUC", "zmuvx3y", "AMesDKy", "58GJz5L", "VOWb9I2", "c2dUY15", "zJkz3e9", 
+                    "XeMZCHN", "97xe3Dt", "mAIhWet", "IhitbRa", "QCC3mM9", "safiJWf", "Pjdh7wA", "phT5aCv", "ge95rJA", "Q0PPlBv", 
+                    "nRx0Q92", "SGkO1pK", "6Fy84K5", "g5X0Rf7", "lmjn7AV", "G67ztcQ", "Q3DZG4r", "61NIDPD", "MJRbWU2", "azK1pdo", 
+                    "zZX3aPR", "TZqGXAs", "b4KKgqa", "QD2aTju", "QkzMOdY", "QWcXFwT", "nYdhej3", "RzQZjMh", "4y6fWgu", "lh70FEu", 
+                    "DOUxCAL", "VnJ9OzG", "NYC8pII", "U1x9gXv", "ZucTPyh", "HUjQxNI", "990QsjZ", "5xJKDXt", "il1i8PI", "t2hV0yU", 
+                    "nbGGLyp", "AuW5aEi", "5XE8t7a", "0RJQfgL", "1g7uriO", "X7hYsz5", "l8XqWZI", "6aBV4Av", "MpHWoFp", "eiWLyvq", 
+                    "TAFtumH", "MgybwWH", "GcJ26xH", "M4PYkas", "rGYp7le", "e8lRhDB", "hKz3xRV", "t1oSaUF", "zCJejfQ", "BhI9Dlk", 
+                    "pHrsg60", "mkpnAJr", "BgecBgN", "HNjo15T", "JXdnDRy", "9IYRMVa", "BI8Hm4p", "vF9QqkZ", "4w9Ul0n", "9IQgTVt", 
+                    "rcNYyvR", "9QyIStJ", "RX22QkK", "Yaa8V9q", "K5bqyAb", "gEHkfsy", "34z4Ddu", "W7rjDOq", "5rbixh4", "vSf8LwZ", 
+                    "BifRlbI", "pSlfHBx", "dI1IJIv", "ClEfL14", "Aa6wBTq", "rwq3PVT", "Yz0tsk0", "kxyilF1", "KDL5J9Q", "OydaR24", 
+                    "cieRDxo", "PD49Qgp", "XD6r8hy", "GuNLwe7", "k8c4xBX", "dwVv3Np", "Ppe0d7W", "lxdNE2N", "jIROKzV", "QRvQqnP"
+                ]
             },
             {
                 marquee: "◦•●◉⚽𝑮𝒊𝒇𝒔 for Boys⚽◉●•◦",
                 bgUrl: "https://xatimg.com/image/alq7yTJkYQ9K.gif",
                 prefix: "Boys - ",
                 count: 80,
-                ids: ["TuM4M0Y", "Efq83dj", "2sST25I", "owUDph9", "AfYHp9I", "2p3LqTb", "PzBq5cQ", "aZqpfXn", "w8PLjgH", "8Mdqo6S", "8IQ7rkO", "6FyQWXx", "PEtWkQQ", "UaVZDVR", "7o6JiVs", "42hhrTx", "Ual7U1b", "ORNyPoo", "uLch4gh", "cn99itV", "rjUotMM", "k0IBNXr", "8BBQd0U", "s5JY6KC", "41J6p8H", "MLyoMwc", "bM3EV99", "RD5TBCC", "cOozjHQ", "e9eEEwO", "tKJ6yHn", "eufJQoB", "sDMDlGy", "QsjULQQ", "aCPefwY", "p2xjO2k", "hCInipp", "tvvApvD", "3Mt9UNv", "TfARJjn", "dR3CxCN", "8gfbsdF", "GhSz4Tm", "tQUkifV", "WbAm6EF", "A6pBzZ2", "pxRvTLF", "NBZRESL", "qXdhY7k", "qRKBupx", "VYzO4af", "296olmQ", "TUQlHZG", "c75lqAO", "byDQC25", "CsBqooA", "1rVeohN", "JTNs7O5", "E161qFF", "BXHH620", "Z3wkqGh", "z8cFNUw", "JLu7n4L", "K8Q1FrS", "OKeupng"]
+                ids: [
+                    "TuM4M0Y", "Efq83dj", "2sST25I", "owUDph9", "AfYHp9I", "2p3LqTb", "PzBq5cQ", "aZqpfXn", "w8PLjgH", "8Mdqo6S", 
+                    "8IQ7rkO", "6FyQWXx", "PEtWkQQ", "UaVZDVR", "7o6JiVs", "42hhrTx", "Ual7U1b", "ORNyPoo", "uLch4gh", "cn99itV", 
+                    "rjUotMM", "k0IBNXr", "8BBQd0U", "s5JY6KC", "41J6p8H", "MLyoMwc", "bM3EV99", "RD5TBCC", "cOozjHQ", "e9eEEwO", 
+                    "tKJ6yHn", "eufJQoB", "sDMDlGy", "QsjULQQ", "aCPefwY", "p2xjO2k", "hCInipp", "tvvApvD", "3Mt9UNv", "TfARJjn", 
+                    "dR3CxCN", "8gfbsdF", "GhSz4Tm", "tQUkifV", "WbAm6EF", "A6pBzZ2", "pxRvTLF", "NBZRESL", "qXdhY7k", "qRKBupx", 
+                    "VYzO4af", "296olmQ", "TUQlHZG", "c75lqAO", "byDQC25", "CsBqooA", "1rVeohN", "JTNs7O5", "E161qFF", "BXHH620", 
+                    "Z3wkqGh", "z8cFNUw", "JLu7n4L", "K8Q1FrS", "OKeupng"
+                ]
             },
             {
                 marquee: "◦•●◉🎧 DJ 🎧◉●•◦",
@@ -445,17 +463,26 @@
                 bgUrl: "https://xatimg.com/image/eQclCkaKDJdZ.gif",
                 prefix: "Love - ",
                 count: 40,
-                ids: ["Ep5rHb0", "C6k7ZqD", "5mOjvLd", "GV09kK0", "mrSg7lE", "aKcDvFs", "pnD2aI6", "C8QLl5R", "t64DLkv", "vqhkiDt", "DWNZZAw", "ega8lnz", "1XgqvGq", "8C5CM5l", "GG9FWLE", "3D2EGuq", "RB9hBXI", "sw8xynw", "zGwllEx", "An7GVDw", "oAQ7ZKY", "W2Ik2ii", "TsrKndW", "oIHksVr", "DUbooaj", "FrM3Ofc"]
+                ids: [
+                    "Ep5rHb0", "C6k7ZqD", "5mOjvLd", "GV09kK0", "mrSg7lE", "aKcDvFs", "pnD2aI6", "C8QLl5R", "t64DLkv", "vqhkiDt", 
+                    "DWNZZAw", "ega8lnz", "1XgqvGq", "8C5CM5l", "GG9FWLE", "3D2EGuq", "RB9hBXI", "sw8xynw", "zGwllEx", "An7GVDw", 
+                    "oAQ7ZKY", "W2Ik2ii", "TsrKndW", "oIHksVr", "DUbooaj", "FrM3Ofc"
+                ]
             },
             {
                 marquee: "◦•●◉🎅🏻𝑮𝒊𝒇𝒔 for Christmas🎅🏻◉●•◦",
                 bgUrl: "https://xatimg.com/image/eQclCkaKDJdZ.gif",
                 prefix: "Santa-",
                 count: 50,
-                ids: ["scFUgeO", "C2IlOHP", "eg68Ecf", "WDqAEGt", "UYihg7u", "8TTBlP3", "pMISF5C", "t9DUoYB", "LltFIjJ", "C1GKTUp", "lgDQ9xV", "B6mFraA", "e65XgqR", "zEcR46h", "jziuHfV", "i7U9ne1", "ZjBgtDn", "Zk4NxmP", "QCUo3JL", "RslU5NE", "XuTa0A3", "ZhxY9yY", "wQKCFYN", "Xec6iR5", "gaqAFSz", "4d2hV6U", "7kZUGXu", "v8D3w3m", "wi1UzvB", "nb5PWLW", "6q8KyXL", "vz6tFYD"]
+                ids: [
+                    "scFUgeO", "C2IlOHP", "eg68Ecf", "WDqAEGt", "UYihg7u", "8TTBlP3", "pMISF5C", "t9DUoYB", "LltFIjJ", "C1GKTUp", 
+                    "lgDQ9xV", "B6mFraA", "e65XgqR", "zEcR46h", "jziuHfV", "i7U9ne1", "ZjBgtDn", "Zk4NxmP", "QCUo3JL", "RslU5NE", 
+                    "XuTa0A3", "ZhxY9yY", "wQKCFYN", "Xec6iR5", "gaqAFSz", "4d2hV6U", "7kZUGXu", "v8D3w3m", "wi1UzvB", "nb5PWLW", 
+                    "6q8KyXL", "vz6tFYD"
+                ]
             },
             {
-                marquee: "◦•●◉🤡𝑮𝒊𝒇𝒔 for Halloween🤡◉●•◦",
+                marquee: "◦•●◉🤡𝑮𝒊𝒇𝒔 for Halloween🤡◉●•◦>>>>>>>◦•●◉⭐After Editabile - 400xats⭐◉●•◦",
                 bgUrl: "https://xatimg.com/image/eQclCkaKDJdZ.gif",
                 prefix: "Hall-",
                 count: 30,
@@ -466,73 +493,79 @@
                 bgUrl: "https://xatimg.com/image/eQclCkaKDJdZ.gif",
                 prefix: "Mix-A-",
                 count: 60,
-                ids: ["2bISAr5", "S9MdkJ5", "7DUEwLS", "W333chJ", "Ssb3929", "RQHM46D", "lGQJNX1", "lJiLGQ8", "w4Sci6P", "ugX43iJ", "AkNqNY1", "aSobzUt", "INt3jug", "zpFsVAz", "PJesNbS", "VO0ieCW", "kuqjWLl", "fPot2Xs", "IlobBuk", "EKEhV21", "nmsv6jb", "IdXSX1G", "SN9H6sb", "glj9d5s", "uatKnzK", "J1rgeOX", "N9pTpyb", "BlD5Z0H", "9jFdr5h", "9jQbyrA", "e1VjaA1", "nLUJ9zd", "3P5qIfz", "EAmV3X8", "4LqAKYX", "OiPsJkK", "bjHShWs", "2TwOTwM", "z81fxbX", "iqtI1Bu"]
+                ids: [
+                    "2bISAr5", "S9MdkJ5", "7DUEwLS", "W333chJ", "Ssb3929", "RQHM46D", "lGQJNX1", "lJiLGQ8", "w4Sci6P", "ugX43iJ", 
+                    "AkNqNY1", "aSobzUt", "INt3jug", "zpFsVAz", "PJesNbS", "VO0ieCW", "kuqjWLl", "fPot2Xs", "IlobBuk", "EKEhV21", 
+                    "nmsv6jb", "IdXSX1G", "SN9H6sb", "glj9d5s", "uatKnzK", "J1rgeOX", "N9pTpyb", "BlD5Z0H", "9jFdr5h", "9jQbyrA", 
+                    "e1VjaA1", "nLUJ9zd", "3P5qIfz", "EAmV3X8", "4LqAKYX", "OiPsJkK", "bjHShWs", "2TwOTwM", "z81fxbX", "iqtI1Bu"
+                ]
             }
         ];
 
         function initGifsGallery() {
             const container = document.getElementById('gifs-galleries-container');
-            container.innerHTML = ""; // Limpiar previo si existiera
+            container.innerHTML = ""; 
 
             const defaultImg = "https://i.imgur.com/AKsLGM7.png";
 
             categories.forEach(cat => {
-                // Generar Título / Marquee
+                // Banner exacto de Gif.html
                 const marqueeDiv = document.createElement('div');
-                marqueeDiv.className = 'marquee-banner';
+                marqueeDiv.className = 'Mesaj';
                 marqueeDiv.style.backgroundImage = `url('${cat.bgUrl}')`;
                 marqueeDiv.innerHTML = `<marquee>${cat.marquee}</marquee>`;
                 container.appendChild(marqueeDiv);
 
-                // Generar Grid (la tabla moderna adaptativa)
-                const gridDiv = document.createElement('div');
-                gridDiv.className = 'gif-grid';
+                // Estructura de Tabla para mantener exactitud con el diseño
+                const table = document.createElement('table');
+                table.setAttribute('cellpadding', '0');
+                table.setAttribute('cellspacing', '0');
+                table.setAttribute('width', '100%');
+                const tbody = document.createElement('tbody');
                 
-                // Usamos un DocumentFragment para optimizar la inserción masiva de imágenes y evitar lag
                 const fragment = document.createDocumentFragment();
                 
                 for(let i = 0; i < cat.count; i++) {
                     let imgSrc = defaultImg;
                     
-                    // Si tenemos una ID definida en esa posición, la usamos
                     if (i < cat.ids.length) {
                         const id = cat.ids[i];
                         if (id === "") {
-                            imgSrc = ""; // Vacío si así se determinó en la base
+                            imgSrc = "";
                         } else if (id.startsWith("http")) {
-                            imgSrc = id; // Por si es una URL completa externa
+                            imgSrc = id;
                         } else {
-                            imgSrc = `https://i.imgur.com/${id}.gif`; // Auto-construir URL de imgur
+                            imgSrc = `https://i.imgur.com/${id}.gif`;
                         }
                     }
 
-                    const itemDiv = document.createElement('div');
-                    itemDiv.className = 'gif-item';
-                    itemDiv.innerHTML = `
-                        <span>${cat.prefix}${i + 1}</span>
-                        <img src="${imgSrc}" loading="lazy" onerror="this.src='${defaultImg}'">
-                    `;
-                    fragment.appendChild(itemDiv);
+                    // Recreación exacta del <td><div style=...> original solicitado
+                    const itemTd = document.createElement('td');
+                    itemTd.innerHTML = `
+                    <div style="text-align: center; width: 110px; height: 120px; background-color:#1b1b1b; border: 1px solid rgb(82, 82, 82); border-radius:15px; cursor: pointer; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'; this.style.borderColor='#fff'" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='rgb(82, 82, 82)'">
+                        <font color="#ffffff" style="font-family: Arial, sans-serif; font-size:13px; margin-bottom: 5px;"><b>${cat.prefix}${i + 1}</b></font> 
+                        <img src="${imgSrc}" style="max-width: 80px; max-height: 80px; object-fit: contain;" onerror="this.src='${defaultImg}'" loading="lazy"> 
+                    </div>`;
+                    
+                    fragment.appendChild(itemTd);
                 }
                 
-                // Agregamos todo de golpe para el rendimiento
-                gridDiv.appendChild(fragment);
-                container.appendChild(gridDiv);
+                tbody.appendChild(fragment);
+                table.appendChild(tbody);
+                container.appendChild(table);
             });
         }
-
 
         // ==========================================
         // EFECTO CANVAS DE LUCES
         // ==========================================
         function initCanvasEffect() {
-            var txt = "๖ۣۜBʏDᴇsɪɢɴۣۜ";
+            var txt = "๖ۣۜBʏDᴇsɪɢɴۣۜ";
             var txtH = 60;
             var font = "'Roboto', sans-serif";
             var canvas = document.getElementById("canvas");
             var ctx = canvas.getContext("2d");
             
-            // Adaptar canvas al contenedor
             var parent = document.getElementById("canvasContainer");
             var cw = canvas.width = parent.clientWidth;
             var ch = canvas.height = 150;
@@ -686,7 +719,6 @@
                 };
             }
             
-            // Reajustar tamaño si se redimensiona la ventana
             window.addEventListener('resize', () => {
                 if(document.getElementById('view-gifs').style.display !== 'none') {
                     cw = canvas.width = parent.clientWidth;
@@ -709,18 +741,16 @@
             }, 3000);
         }
 
-        // Deshabilitar menú contextual (clic derecho)
+        // Deshabilitar menú contextual y scripts nativos solicitados
+        var message = "Stop Copyright ByDesign";
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
             showToast();
+            console.log("Right Click Disabled");
         });
-
-        // Deshabilitar selección de texto
         document.addEventListener('selectstart', function(e) {
             e.preventDefault();
         });
-
-        // Prevenir arrastre de imágenes para evitar copias
         document.addEventListener('dragstart', function(e) {
             if (e.target.tagName === 'IMG') {
                 e.preventDefault();
