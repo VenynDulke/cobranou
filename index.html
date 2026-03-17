@@ -62,10 +62,11 @@
         .profile-cover {
             width: 100%;
             height: 150px;
-            background: url('') no-repeat center center;
+            background: linear-gradient(to bottom, rgba(26,26,26,0.8), rgba(0,0,1,0.9));
             background-size: cover;
             position: relative;
-            border-bottom: 5px solid #141414; /* negru */
+            border-bottom: 5px solid #141414;
+            border-radius: 5px 5px 0 0;
         }
 
         .avatar-container {
@@ -305,7 +306,7 @@
         <!-- Elementos comunes en la parte superior -->
         <div class="profile-cover"></div>
         <div class="avatar-container">
-            <img src="https://i0.xat.com/web_gear/chat/GetImage9.php?s&W=240&H=240&U=https://xatimg.com/image/TTCxdIfiBlcl.png" alt="Avatar" class="avatar" onerror="this.src='https://via.placeholder.com/150'">
+            <img src="https://xatimg.com/image/TTCxdIfiBlcl.gif" alt="Avatar" class="avatar" onerror="this.src='https://via.placeholder.com/150'">
         </div>
         
         <div class="profile-details">
@@ -394,7 +395,7 @@
         }
 
         // ==========================================
-        // GENERADOR DE GALERÍA DE GIFS (TABLAS EXACTAS)
+        // GENERADOR DE GALERÍA DE GIFS (TABLAS EXACTAS Y EDITABLES)
         // ==========================================
         const categories = [
             {
@@ -403,13 +404,166 @@
                 prefix: "New - ",
                 count: 80,
                 ids: [
-                    "kCHPefP", "QkhkYXo", "LyUeb2P", "bpD4knA", "6M1IatR", "PnNRIRp", "xSfIc0i", "G5KUUU6", "wk9x2tw", "ceUKI7W", 
-                    "HWVjruy", "wFkwFsX", "yWkfDty", "mletRiu", "YvqCkKE", "ePic3W3", "JSi1q0q", "RPbYpBL", "ExFe6iv", "2LwXYtA", 
-                    "4h804a0", "8EDNM1L", "zc3oHtB", "f3EL9VX", "P9V2kA7", "oLNbQe6", "qgE8LxH", "GEeU7QH", "E40aqN9", "Bu5ktFZ", 
-                    "VQdrW6O", "n9SnGTA", "Yc7YWGR", "ngBrFUT", "5zVy7Gn", "vCNHIOr", "6pUm6z7", "FJKvbon", "6maXR0q", "WhV0YBq", 
-                    "zTV5rDb", "MXQP96b", "qf653hR", "LoTu3WO", "LixtvqW", "GCSPd8R", "mw9IlIs", "PXz3sef", "Uk65EWw", "DUxUjju", 
-                    "GddNFrX", "fmNNEev", "28xWcym", "lZLq1wZ", "Crf2TeQ", "lF7ai1B", "TUy90JQ", "EThwGWl", "Loycdqf", "R3VLKBg", 
-                    "SZkfl8R", "m1bvgGW", "O72Yruj", "hwHHlLM", "OjC0FxI", "oPEYrAi", "", "cniolLC"
+                    // 1
+                    { id: "kCHPefP", url: "" },
+                    // 2
+                    { id: "QkhkYXo", url: "" },
+                    // 3
+                    { id: "LyUeb2P", url: "" },
+                    // 4
+                    { id: "bpD4knA", url: "" },
+                    // 5
+                    { id: "6M1IatR", url: "" },
+                    // 6
+                    { id: "PnNRIRp", url: "" },
+                    // 7
+                    { id: "xSfIc0i", url: "" },
+                    // 8
+                    { id: "G5KUUU6", url: "" },
+                    // 9
+                    { id: "wk9x2tw", url: "" },
+                    // 10
+                    { id: "ceUKI7W", url: "" },
+                    // 11
+                    { id: "HWVjruy", url: "" },
+                    // 12
+                    { id: "wFkwFsX", url: "" },
+                    // 13
+                    { id: "yWkfDty", url: "" },
+                    // 14
+                    { id: "mletRiu", url: "" },
+                    // 15
+                    { id: "YvqCkKE", url: "" },
+                    // 16
+                    { id: "ePic3W3", url: "" },
+                    // 17
+                    { id: "JSi1q0q", url: "" },
+                    // 18
+                    { id: "RPbYpBL", url: "" },
+                    // 19
+                    { id: "ExFe6iv", url: "" },
+                    // 20
+                    { id: "2LwXYtA", url: "" },
+                    // 21
+                    { id: "4h804a0", url: "" },
+                    // 22
+                    { id: "8EDNM1L", url: "" },
+                    // 23
+                    { id: "zc3oHtB", url: "" },
+                    // 24
+                    { id: "f3EL9VX", url: "" },
+                    // 25
+                    { id: "P9V2kA7", url: "" },
+                    // 26
+                    { id: "oLNbQe6", url: "" },
+                    // 27
+                    { id: "qgE8LxH", url: "" },
+                    // 28
+                    { id: "GEeU7QH", url: "" },
+                    // 29
+                    { id: "E40aqN9", url: "" },
+                    // 30
+                    { id: "Bu5ktFZ", url: "" },
+                    // 31
+                    { id: "VQdrW6O", url: "" },
+                    // 32
+                    { id: "n9SnGTA", url: "" },
+                    // 33
+                    { id: "Yc7YWGR", url: "" },
+                    // 34
+                    { id: "ngBrFUT", url: "" },
+                    // 35
+                    { id: "5zVy7Gn", url: "" },
+                    // 36
+                    { id: "vCNHIOr", url: "" },
+                    // 37
+                    { id: "6pUm6z7", url: "" },
+                    // 38
+                    { id: "FJKvbon", url: "" },
+                    // 39
+                    { id: "6maXR0q", url: "" },
+                    // 40
+                    { id: "WhV0YBq", url: "" },
+                    // 41
+                    { id: "zTV5rDb", url: "" },
+                    // 42
+                    { id: "MXQP96b", url: "" },
+                    // 43
+                    { id: "qf653hR", url: "" },
+                    // 44
+                    { id: "LoTu3WO", url: "" },
+                    // 45
+                    { id: "LixtvqW", url: "" },
+                    // 46
+                    { id: "GCSPd8R", url: "" },
+                    // 47
+                    { id: "mw9IlIs", url: "" },
+                    // 48
+                    { id: "PXz3sef", url: "" },
+                    // 49
+                    { id: "Uk65EWw", url: "" },
+                    // 50
+                    { id: "DUxUjju", url: "" },
+                    // 51
+                    { id: "GddNFrX", url: "" },
+                    // 52
+                    { id: "fmNNEev", url: "" },
+                    // 53
+                    { id: "28xWcym", url: "" },
+                    // 54
+                    { id: "lZLq1wZ", url: "" },
+                    // 55
+                    { id: "Crf2TeQ", url: "" },
+                    // 56
+                    { id: "lF7ai1B", url: "" },
+                    // 57
+                    { id: "TUy90JQ", url: "" },
+                    // 58
+                    { id: "EThwGWl", url: "" },
+                    // 59
+                    { id: "Loycdqf", url: "" },
+                    // 60
+                    { id: "R3VLKBg", url: "" },
+                    // 61
+                    { id: "SZkfl8R", url: "" },
+                    // 62
+                    { id: "m1bvgGW", url: "" },
+                    // 63
+                    { id: "O72Yruj", url: "" },
+                    // 64
+                    { id: "hwHHlLM", url: "" },
+                    // 65
+                    { id: "OjC0FxI", url: "" },
+                    // 66
+                    { id: "oPEYrAi", url: "" },
+                    // 67
+                    { id: "", url: "" },
+                    // 68
+                    { id: "cniolLC", url: "" },
+                    // 69
+                    { id: "", url: "" },
+                    // 70
+                    { id: "", url: "" },
+                    // 71
+                    { id: "", url: "" },
+                    // 72
+                    { id: "", url: "" },
+                    // 73
+                    { id: "", url: "" },
+                    // 74
+                    { id: "", url: "" },
+                    // 75
+                    { id: "", url: "" },
+                    // 76
+                    { id: "", url: "" },
+                    // 77
+                    { id: "", url: "" },
+                    // 78
+                    { id: "", url: "" },
+                    // 79
+                    { id: "", url: "" },
+                    // 80
+                    { id: "", url: "" }
                 ]
             },
             {
@@ -418,21 +572,326 @@
                 prefix: "Girls - ",
                 count: 160,
                 ids: [
-                    "hljCHn0", "iPNKu8I", "jrhJ9sQ", "D2hTohw", "oA4sgqt", "YTYq7OD", "n5p2E2P", "3UD4XlM", "Tg7W0LL", "gXW8FH7", 
-                    "l3QJXgL", "dlZzgeM", "jNpzP8i", "zc3eY7Z", "yU6yqeY", "MAJx1v0", "z5koUrZ", "ajBigWC", "uHG384A", "xs1kO1v", 
-                    "WSuhXTu", "0c4sf5l", "KhXXHRX", "ZYaq0Bt", "tjVoTWm", "Kx3eVnH", "zfpFc0A", "5iM7gQc", "VwzUKXO", "ZMmMdHu", 
-                    "RRATvoT", "0968338", "ScwX2Sv", "PIh7bwF", "0ROUn89", "zKBHrro", "NM241AE", "xQJp9wy", "xQPAC11", "cu1hNRa", 
-                    "sBnZxNs", "8INdOsC", "hXB3F3n", "QDABLUC", "zmuvx3y", "AMesDKy", "58GJz5L", "VOWb9I2", "c2dUY15", "zJkz3e9", 
-                    "XeMZCHN", "97xe3Dt", "mAIhWet", "IhitbRa", "QCC3mM9", "safiJWf", "Pjdh7wA", "phT5aCv", "ge95rJA", "Q0PPlBv", 
-                    "nRx0Q92", "SGkO1pK", "6Fy84K5", "g5X0Rf7", "lmjn7AV", "G67ztcQ", "Q3DZG4r", "61NIDPD", "MJRbWU2", "azK1pdo", 
-                    "zZX3aPR", "TZqGXAs", "b4KKgqa", "QD2aTju", "QkzMOdY", "QWcXFwT", "nYdhej3", "RzQZjMh", "4y6fWgu", "lh70FEu", 
-                    "DOUxCAL", "VnJ9OzG", "NYC8pII", "U1x9gXv", "ZucTPyh", "HUjQxNI", "990QsjZ", "5xJKDXt", "il1i8PI", "t2hV0yU", 
-                    "nbGGLyp", "AuW5aEi", "5XE8t7a", "0RJQfgL", "1g7uriO", "X7hYsz5", "l8XqWZI", "6aBV4Av", "MpHWoFp", "eiWLyvq", 
-                    "TAFtumH", "MgybwWH", "GcJ26xH", "M4PYkas", "rGYp7le", "e8lRhDB", "hKz3xRV", "t1oSaUF", "zCJejfQ", "BhI9Dlk", 
-                    "pHrsg60", "mkpnAJr", "BgecBgN", "HNjo15T", "JXdnDRy", "9IYRMVa", "BI8Hm4p", "vF9QqkZ", "4w9Ul0n", "9IQgTVt", 
-                    "rcNYyvR", "9QyIStJ", "RX22QkK", "Yaa8V9q", "K5bqyAb", "gEHkfsy", "34z4Ddu", "W7rjDOq", "5rbixh4", "vSf8LwZ", 
-                    "BifRlbI", "pSlfHBx", "dI1IJIv", "ClEfL14", "Aa6wBTq", "rwq3PVT", "Yz0tsk0", "kxyilF1", "KDL5J9Q", "OydaR24", 
-                    "cieRDxo", "PD49Qgp", "XD6r8hy", "GuNLwe7", "k8c4xBX", "dwVv3Np", "Ppe0d7W", "lxdNE2N", "jIROKzV", "QRvQqnP"
+                    // 1
+                    { id: "hljCHn0", url: "" },
+                    // 2
+                    { id: "iPNKu8I", url: "" },
+                    // 3
+                    { id: "jrhJ9sQ", url: "" },
+                    // 4
+                    { id: "D2hTohw", url: "" },
+                    // 5
+                    { id: "oA4sgqt", url: "" },
+                    // 6
+                    { id: "YTYq7OD", url: "" },
+                    // 7
+                    { id: "n5p2E2P", url: "" },
+                    // 8
+                    { id: "3UD4XlM", url: "" },
+                    // 9
+                    { id: "Tg7W0LL", url: "" },
+                    // 10
+                    { id: "gXW8FH7", url: "" },
+                    // 11
+                    { id: "l3QJXgL", url: "" },
+                    // 12
+                    { id: "dlZzgeM", url: "" },
+                    // 13
+                    { id: "jNpzP8i", url: "" },
+                    // 14
+                    { id: "zc3eY7Z", url: "" },
+                    // 15
+                    { id: "yU6yqeY", url: "" },
+                    // 16
+                    { id: "MAJx1v0", url: "" },
+                    // 17
+                    { id: "z5koUrZ", url: "" },
+                    // 18
+                    { id: "ajBigWC", url: "" },
+                    // 19
+                    { id: "uHG384A", url: "" },
+                    // 20
+                    { id: "xs1kO1v", url: "" },
+                    // 21
+                    { id: "WSuhXTu", url: "" },
+                    // 22
+                    { id: "0c4sf5l", url: "" },
+                    // 23
+                    { id: "KhXXHRX", url: "" },
+                    // 24
+                    { id: "ZYaq0Bt", url: "" },
+                    // 25
+                    { id: "tjVoTWm", url: "" },
+                    // 26
+                    { id: "Kx3eVnH", url: "" },
+                    // 27
+                    { id: "zfpFc0A", url: "" },
+                    // 28
+                    { id: "5iM7gQc", url: "" },
+                    // 29
+                    { id: "VwzUKXO", url: "" },
+                    // 30
+                    { id: "ZMmMdHu", url: "" },
+                    // 31
+                    { id: "RRATvoT", url: "" },
+                    // 32
+                    { id: "0968338", url: "" },
+                    // 33
+                    { id: "ScwX2Sv", url: "" },
+                    // 34
+                    { id: "PIh7bwF", url: "" },
+                    // 35
+                    { id: "0ROUn89", url: "" },
+                    // 36
+                    { id: "zKBHrro", url: "" },
+                    // 37
+                    { id: "NM241AE", url: "" },
+                    // 38
+                    { id: "xQJp9wy", url: "" },
+                    // 39
+                    { id: "xQPAC11", url: "" },
+                    // 40
+                    { id: "cu1hNRa", url: "" },
+                    // 41
+                    { id: "sBnZxNs", url: "" },
+                    // 42
+                    { id: "8INdOsC", url: "" },
+                    // 43
+                    { id: "hXB3F3n", url: "" },
+                    // 44
+                    { id: "QDABLUC", url: "" },
+                    // 45
+                    { id: "zmuvx3y", url: "" },
+                    // 46
+                    { id: "AMesDKy", url: "" },
+                    // 47
+                    { id: "58GJz5L", url: "" },
+                    // 48
+                    { id: "VOWb9I2", url: "" },
+                    // 49
+                    { id: "c2dUY15", url: "" },
+                    // 50
+                    { id: "zJkz3e9", url: "" },
+                    // 51
+                    { id: "XeMZCHN", url: "" },
+                    // 52
+                    { id: "97xe3Dt", url: "" },
+                    // 53
+                    { id: "mAIhWet", url: "" },
+                    // 54
+                    { id: "IhitbRa", url: "" },
+                    // 55
+                    { id: "QCC3mM9", url: "" },
+                    // 56
+                    { id: "safiJWf", url: "" },
+                    // 57
+                    { id: "Pjdh7wA", url: "" },
+                    // 58
+                    { id: "phT5aCv", url: "" },
+                    // 59
+                    { id: "ge95rJA", url: "" },
+                    // 60
+                    { id: "Q0PPlBv", url: "" },
+                    // 61
+                    { id: "nRx0Q92", url: "" },
+                    // 62
+                    { id: "SGkO1pK", url: "" },
+                    // 63
+                    { id: "6Fy84K5", url: "" },
+                    // 64
+                    { id: "g5X0Rf7", url: "" },
+                    // 65
+                    { id: "lmjn7AV", url: "" },
+                    // 66
+                    { id: "G67ztcQ", url: "" },
+                    // 67
+                    { id: "Q3DZG4r", url: "" },
+                    // 68
+                    { id: "61NIDPD", url: "" },
+                    // 69
+                    { id: "MJRbWU2", url: "" },
+                    // 70
+                    { id: "azK1pdo", url: "" },
+                    // 71
+                    { id: "zZX3aPR", url: "" },
+                    // 72
+                    { id: "TZqGXAs", url: "" },
+                    // 73
+                    { id: "b4KKgqa", url: "" },
+                    // 74
+                    { id: "QD2aTju", url: "" },
+                    // 75
+                    { id: "QkzMOdY", url: "" },
+                    // 76
+                    { id: "QWcXFwT", url: "" },
+                    // 77
+                    { id: "nYdhej3", url: "" },
+                    // 78
+                    { id: "RzQZjMh", url: "" },
+                    // 79
+                    { id: "4y6fWgu", url: "" },
+                    // 80
+                    { id: "lh70FEu", url: "" },
+                    // 81
+                    { id: "DOUxCAL", url: "" },
+                    // 82
+                    { id: "VnJ9OzG", url: "" },
+                    // 83
+                    { id: "NYC8pII", url: "" },
+                    // 84
+                    { id: "U1x9gXv", url: "" },
+                    // 85
+                    { id: "ZucTPyh", url: "" },
+                    // 86
+                    { id: "HUjQxNI", url: "" },
+                    // 87
+                    { id: "990QsjZ", url: "" },
+                    // 88
+                    { id: "5xJKDXt", url: "" },
+                    // 89
+                    { id: "il1i8PI", url: "" },
+                    // 90
+                    { id: "t2hV0yU", url: "" },
+                    // 91
+                    { id: "nbGGLyp", url: "" },
+                    // 92
+                    { id: "AuW5aEi", url: "" },
+                    // 93
+                    { id: "5XE8t7a", url: "" },
+                    // 94
+                    { id: "0RJQfgL", url: "" },
+                    // 95
+                    { id: "1g7uriO", url: "" },
+                    // 96
+                    { id: "X7hYsz5", url: "" },
+                    // 97
+                    { id: "l8XqWZI", url: "" },
+                    // 98
+                    { id: "6aBV4Av", url: "" },
+                    // 99
+                    { id: "MpHWoFp", url: "" },
+                    // 100
+                    { id: "eiWLyvq", url: "" },
+                    // 101
+                    { id: "TAFtumH", url: "" },
+                    // 102
+                    { id: "MgybwWH", url: "" },
+                    // 103
+                    { id: "GcJ26xH", url: "" },
+                    // 104
+                    { id: "M4PYkas", url: "" },
+                    // 105
+                    { id: "rGYp7le", url: "" },
+                    // 106
+                    { id: "e8lRhDB", url: "" },
+                    // 107
+                    { id: "hKz3xRV", url: "" },
+                    // 108
+                    { id: "t1oSaUF", url: "" },
+                    // 109
+                    { id: "zCJejfQ", url: "" },
+                    // 110
+                    { id: "BhI9Dlk", url: "" },
+                    // 111
+                    { id: "pHrsg60", url: "" },
+                    // 112
+                    { id: "mkpnAJr", url: "" },
+                    // 113
+                    { id: "BgecBgN", url: "" },
+                    // 114
+                    { id: "HNjo15T", url: "" },
+                    // 115
+                    { id: "JXdnDRy", url: "" },
+                    // 116
+                    { id: "9IYRMVa", url: "" },
+                    // 117
+                    { id: "BI8Hm4p", url: "" },
+                    // 118
+                    { id: "vF9QqkZ", url: "" },
+                    // 119
+                    { id: "4w9Ul0n", url: "" },
+                    // 120
+                    { id: "9IQgTVt", url: "" },
+                    // 121
+                    { id: "rcNYyvR", url: "" },
+                    // 122
+                    { id: "9QyIStJ", url: "" },
+                    // 123
+                    { id: "RX22QkK", url: "" },
+                    // 124
+                    { id: "Yaa8V9q", url: "" },
+                    // 125
+                    { id: "K5bqyAb", url: "" },
+                    // 126
+                    { id: "gEHkfsy", url: "" },
+                    // 127
+                    { id: "34z4Ddu", url: "" },
+                    // 128
+                    { id: "W7rjDOq", url: "" },
+                    // 129
+                    { id: "5rbixh4", url: "" },
+                    // 130
+                    { id: "vSf8LwZ", url: "" },
+                    // 131
+                    { id: "BifRlbI", url: "" },
+                    // 132
+                    { id: "pSlfHBx", url: "" },
+                    // 133
+                    { id: "dI1IJIv", url: "" },
+                    // 134
+                    { id: "ClEfL14", url: "" },
+                    // 135
+                    { id: "Aa6wBTq", url: "" },
+                    // 136
+                    { id: "rwq3PVT", url: "" },
+                    // 137
+                    { id: "Yz0tsk0", url: "" },
+                    // 138
+                    { id: "kxyilF1", url: "" },
+                    // 139
+                    { id: "KDL5J9Q", url: "" },
+                    // 140
+                    { id: "OydaR24", url: "" },
+                    // 141
+                    { id: "cieRDxo", url: "" },
+                    // 142
+                    { id: "PD49Qgp", url: "" },
+                    // 143
+                    { id: "XD6r8hy", url: "" },
+                    // 144
+                    { id: "GuNLwe7", url: "" },
+                    // 145
+                    { id: "k8c4xBX", url: "" },
+                    // 146
+                    { id: "dwVv3Np", url: "" },
+                    // 147
+                    { id: "Ppe0d7W", url: "" },
+                    // 148
+                    { id: "lxdNE2N", url: "" },
+                    // 149
+                    { id: "jIROKzV", url: "" },
+                    // 150
+                    { id: "QRvQqnP", url: "" },
+                    // 151
+                    { id: "", url: "" },
+                    // 152
+                    { id: "", url: "" },
+                    // 153
+                    { id: "", url: "" },
+                    // 154
+                    { id: "", url: "" },
+                    // 155
+                    { id: "", url: "" },
+                    // 156
+                    { id: "", url: "" },
+                    // 157
+                    { id: "", url: "" },
+                    // 158
+                    { id: "", url: "" },
+                    // 159
+                    { id: "", url: "" },
+                    // 160
+                    { id: "", url: "" }
                 ]
             },
             {
@@ -441,13 +900,166 @@
                 prefix: "Boys - ",
                 count: 80,
                 ids: [
-                    "TuM4M0Y", "Efq83dj", "2sST25I", "owUDph9", "AfYHp9I", "2p3LqTb", "PzBq5cQ", "aZqpfXn", "w8PLjgH", "8Mdqo6S", 
-                    "8IQ7rkO", "6FyQWXx", "PEtWkQQ", "UaVZDVR", "7o6JiVs", "42hhrTx", "Ual7U1b", "ORNyPoo", "uLch4gh", "cn99itV", 
-                    "rjUotMM", "k0IBNXr", "8BBQd0U", "s5JY6KC", "41J6p8H", "MLyoMwc", "bM3EV99", "RD5TBCC", "cOozjHQ", "e9eEEwO", 
-                    "tKJ6yHn", "eufJQoB", "sDMDlGy", "QsjULQQ", "aCPefwY", "p2xjO2k", "hCInipp", "tvvApvD", "3Mt9UNv", "TfARJjn", 
-                    "dR3CxCN", "8gfbsdF", "GhSz4Tm", "tQUkifV", "WbAm6EF", "A6pBzZ2", "pxRvTLF", "NBZRESL", "qXdhY7k", "qRKBupx", 
-                    "VYzO4af", "296olmQ", "TUQlHZG", "c75lqAO", "byDQC25", "CsBqooA", "1rVeohN", "JTNs7O5", "E161qFF", "BXHH620", 
-                    "Z3wkqGh", "z8cFNUw", "JLu7n4L", "K8Q1FrS", "OKeupng"
+                    // 1
+                    { id: "TuM4M0Y", url: "" },
+                    // 2
+                    { id: "Efq83dj", url: "" },
+                    // 3
+                    { id: "2sST25I", url: "" },
+                    // 4
+                    { id: "owUDph9", url: "" },
+                    // 5
+                    { id: "AfYHp9I", url: "" },
+                    // 6
+                    { id: "2p3LqTb", url: "" },
+                    // 7
+                    { id: "PzBq5cQ", url: "" },
+                    // 8
+                    { id: "aZqpfXn", url: "" },
+                    // 9
+                    { id: "w8PLjgH", url: "" },
+                    // 10
+                    { id: "8Mdqo6S", url: "" },
+                    // 11
+                    { id: "8IQ7rkO", url: "" },
+                    // 12
+                    { id: "6FyQWXx", url: "" },
+                    // 13
+                    { id: "PEtWkQQ", url: "" },
+                    // 14
+                    { id: "UaVZDVR", url: "" },
+                    // 15
+                    { id: "7o6JiVs", url: "" },
+                    // 16
+                    { id: "42hhrTx", url: "" },
+                    // 17
+                    { id: "Ual7U1b", url: "" },
+                    // 18
+                    { id: "ORNyPoo", url: "" },
+                    // 19
+                    { id: "uLch4gh", url: "" },
+                    // 20
+                    { id: "cn99itV", url: "" },
+                    // 21
+                    { id: "rjUotMM", url: "" },
+                    // 22
+                    { id: "k0IBNXr", url: "" },
+                    // 23
+                    { id: "8BBQd0U", url: "" },
+                    // 24
+                    { id: "s5JY6KC", url: "" },
+                    // 25
+                    { id: "41J6p8H", url: "" },
+                    // 26
+                    { id: "MLyoMwc", url: "" },
+                    // 27
+                    { id: "bM3EV99", url: "" },
+                    // 28
+                    { id: "RD5TBCC", url: "" },
+                    // 29
+                    { id: "cOozjHQ", url: "" },
+                    // 30
+                    { id: "e9eEEwO", url: "" },
+                    // 31
+                    { id: "tKJ6yHn", url: "" },
+                    // 32
+                    { id: "eufJQoB", url: "" },
+                    // 33
+                    { id: "sDMDlGy", url: "" },
+                    // 34
+                    { id: "QsjULQQ", url: "" },
+                    // 35
+                    { id: "aCPefwY", url: "" },
+                    // 36
+                    { id: "p2xjO2k", url: "" },
+                    // 37
+                    { id: "hCInipp", url: "" },
+                    // 38
+                    { id: "tvvApvD", url: "" },
+                    // 39
+                    { id: "3Mt9UNv", url: "" },
+                    // 40
+                    { id: "TfARJjn", url: "" },
+                    // 41
+                    { id: "dR3CxCN", url: "" },
+                    // 42
+                    { id: "8gfbsdF", url: "" },
+                    // 43
+                    { id: "GhSz4Tm", url: "" },
+                    // 44
+                    { id: "tQUkifV", url: "" },
+                    // 45
+                    { id: "WbAm6EF", url: "" },
+                    // 46
+                    { id: "A6pBzZ2", url: "" },
+                    // 47
+                    { id: "pxRvTLF", url: "" },
+                    // 48
+                    { id: "NBZRESL", url: "" },
+                    // 49
+                    { id: "qXdhY7k", url: "" },
+                    // 50
+                    { id: "qRKBupx", url: "" },
+                    // 51
+                    { id: "VYzO4af", url: "" },
+                    // 52
+                    { id: "296olmQ", url: "" },
+                    // 53
+                    { id: "TUQlHZG", url: "" },
+                    // 54
+                    { id: "c75lqAO", url: "" },
+                    // 55
+                    { id: "byDQC25", url: "" },
+                    // 56
+                    { id: "CsBqooA", url: "" },
+                    // 57
+                    { id: "1rVeohN", url: "" },
+                    // 58
+                    { id: "JTNs7O5", url: "" },
+                    // 59
+                    { id: "E161qFF", url: "" },
+                    // 60
+                    { id: "BXHH620", url: "" },
+                    // 61
+                    { id: "Z3wkqGh", url: "" },
+                    // 62
+                    { id: "z8cFNUw", url: "" },
+                    // 63
+                    { id: "JLu7n4L", url: "" },
+                    // 64
+                    { id: "K8Q1FrS", url: "" },
+                    // 65
+                    { id: "OKeupng", url: "" },
+                    // 66
+                    { id: "", url: "" },
+                    // 67
+                    { id: "", url: "" },
+                    // 68
+                    { id: "", url: "" },
+                    // 69
+                    { id: "", url: "" },
+                    // 70
+                    { id: "", url: "" },
+                    // 71
+                    { id: "", url: "" },
+                    // 72
+                    { id: "", url: "" },
+                    // 73
+                    { id: "", url: "" },
+                    // 74
+                    { id: "", url: "" },
+                    // 75
+                    { id: "", url: "" },
+                    // 76
+                    { id: "", url: "" },
+                    // 77
+                    { id: "", url: "" },
+                    // 78
+                    { id: "", url: "" },
+                    // 79
+                    { id: "", url: "" },
+                    // 80
+                    { id: "", url: "" }
                 ]
             },
             {
@@ -455,7 +1067,48 @@
                 bgUrl: "https://xatimg.com/image/eQclCkaKDJdZ.gif",
                 prefix: "DJ - ",
                 count: 20,
-                ids: ["aEWCfBv", "S1JdH9n", "XsFu89U", "9KIlnTT", "TSKKzEh", "iDIQvMr", "wa8jTmW", "NXgQlle", "fWhcjua", "jgTSZZY", "VXFoIQM", "ukS74e8"]
+                ids: [
+                    // 1
+                    { id: "aEWCfBv", url: "" },
+                    // 2
+                    { id: "S1JdH9n", url: "" },
+                    // 3
+                    { id: "XsFu89U", url: "" },
+                    // 4
+                    { id: "9KIlnTT", url: "" },
+                    // 5
+                    { id: "TSKKzEh", url: "" },
+                    // 6
+                    { id: "iDIQvMr", url: "" },
+                    // 7
+                    { id: "wa8jTmW", url: "" },
+                    // 8
+                    { id: "NXgQlle", url: "" },
+                    // 9
+                    { id: "fWhcjua", url: "" },
+                    // 10
+                    { id: "jgTSZZY", url: "" },
+                    // 11
+                    { id: "VXFoIQM", url: "" },
+                    // 12
+                    { id: "ukS74e8", url: "" },
+                    // 13
+                    { id: "", url: "" },
+                    // 14
+                    { id: "", url: "" },
+                    // 15
+                    { id: "", url: "" },
+                    // 16
+                    { id: "", url: "" },
+                    // 17
+                    { id: "", url: "" },
+                    // 18
+                    { id: "", url: "" },
+                    // 19
+                    { id: "", url: "" },
+                    // 20
+                    { id: "", url: "" }
+                ]
             },
             {
                 marquee: "◦•●◉❤️𝑮𝒊𝒇𝒔 for Lovers❤️◉●•◦",
@@ -463,9 +1116,86 @@
                 prefix: "Love - ",
                 count: 40,
                 ids: [
-                    "Ep5rHb0", "C6k7ZqD", "5mOjvLd", "GV09kK0", "mrSg7lE", "aKcDvFs", "pnD2aI6", "C8QLl5R", "t64DLkv", "vqhkiDt", 
-                    "DWNZZAw", "ega8lnz", "1XgqvGq", "8C5CM5l", "GG9FWLE", "3D2EGuq", "RB9hBXI", "sw8xynw", "zGwllEx", "An7GVDw", 
-                    "oAQ7ZKY", "W2Ik2ii", "TsrKndW", "oIHksVr", "DUbooaj", "FrM3Ofc"
+                    // 1
+                    { id: "Ep5rHb0", url: "" },
+                    // 2
+                    { id: "C6k7ZqD", url: "" },
+                    // 3
+                    { id: "5mOjvLd", url: "" },
+                    // 4
+                    { id: "GV09kK0", url: "" },
+                    // 5
+                    { id: "mrSg7lE", url: "" },
+                    // 6
+                    { id: "aKcDvFs", url: "" },
+                    // 7
+                    { id: "pnD2aI6", url: "" },
+                    // 8
+                    { id: "C8QLl5R", url: "" },
+                    // 9
+                    { id: "t64DLkv", url: "" },
+                    // 10
+                    { id: "vqhkiDt", url: "" },
+                    // 11
+                    { id: "DWNZZAw", url: "" },
+                    // 12
+                    { id: "ega8lnz", url: "" },
+                    // 13
+                    { id: "1XgqvGq", url: "" },
+                    // 14
+                    { id: "8C5CM5l", url: "" },
+                    // 15
+                    { id: "GG9FWLE", url: "" },
+                    // 16
+                    { id: "3D2EGuq", url: "" },
+                    // 17
+                    { id: "RB9hBXI", url: "" },
+                    // 18
+                    { id: "sw8xynw", url: "" },
+                    // 19
+                    { id: "zGwllEx", url: "" },
+                    // 20
+                    { id: "An7GVDw", url: "" },
+                    // 21
+                    { id: "oAQ7ZKY", url: "" },
+                    // 22
+                    { id: "W2Ik2ii", url: "" },
+                    // 23
+                    { id: "TsrKndW", url: "" },
+                    // 24
+                    { id: "oIHksVr", url: "" },
+                    // 25
+                    { id: "DUbooaj", url: "" },
+                    // 26
+                    { id: "FrM3Ofc", url: "" },
+                    // 27
+                    { id: "", url: "" },
+                    // 28
+                    { id: "", url: "" },
+                    // 29
+                    { id: "", url: "" },
+                    // 30
+                    { id: "", url: "" },
+                    // 31
+                    { id: "", url: "" },
+                    // 32
+                    { id: "", url: "" },
+                    // 33
+                    { id: "", url: "" },
+                    // 34
+                    { id: "", url: "" },
+                    // 35
+                    { id: "", url: "" },
+                    // 36
+                    { id: "", url: "" },
+                    // 37
+                    { id: "", url: "" },
+                    // 38
+                    { id: "", url: "" },
+                    // 39
+                    { id: "", url: "" },
+                    // 40
+                    { id: "", url: "" }
                 ]
             },
             {
@@ -474,10 +1204,106 @@
                 prefix: "Santa-",
                 count: 50,
                 ids: [
-                    "scFUgeO", "C2IlOHP", "eg68Ecf", "WDqAEGt", "UYihg7u", "8TTBlP3", "pMISF5C", "t9DUoYB", "LltFIjJ", "C1GKTUp", 
-                    "lgDQ9xV", "B6mFraA", "e65XgqR", "zEcR46h", "jziuHfV", "i7U9ne1", "ZjBgtDn", "Zk4NxmP", "QCUo3JL", "RslU5NE", 
-                    "XuTa0A3", "ZhxY9yY", "wQKCFYN", "Xec6iR5", "gaqAFSz", "4d2hV6U", "7kZUGXu", "v8D3w3m", "wi1UzvB", "nb5PWLW", 
-                    "6q8KyXL", "vz6tFYD"
+                    // 1
+                    { id: "scFUgeO", url: "" },
+                    // 2
+                    { id: "C2IlOHP", url: "" },
+                    // 3
+                    { id: "eg68Ecf", url: "" },
+                    // 4
+                    { id: "WDqAEGt", url: "" },
+                    // 5
+                    { id: "UYihg7u", url: "" },
+                    // 6
+                    { id: "8TTBlP3", url: "" },
+                    // 7
+                    { id: "pMISF5C", url: "" },
+                    // 8
+                    { id: "t9DUoYB", url: "" },
+                    // 9
+                    { id: "LltFIjJ", url: "" },
+                    // 10
+                    { id: "C1GKTUp", url: "" },
+                    // 11
+                    { id: "lgDQ9xV", url: "" },
+                    // 12
+                    { id: "B6mFraA", url: "" },
+                    // 13
+                    { id: "e65XgqR", url: "" },
+                    // 14
+                    { id: "zEcR46h", url: "" },
+                    // 15
+                    { id: "jziuHfV", url: "" },
+                    // 16
+                    { id: "i7U9ne1", url: "" },
+                    // 17
+                    { id: "ZjBgtDn", url: "" },
+                    // 18
+                    { id: "Zk4NxmP", url: "" },
+                    // 19
+                    { id: "QCUo3JL", url: "" },
+                    // 20
+                    { id: "RslU5NE", url: "" },
+                    // 21
+                    { id: "XuTa0A3", url: "" },
+                    // 22
+                    { id: "ZhxY9yY", url: "" },
+                    // 23
+                    { id: "wQKCFYN", url: "" },
+                    // 24
+                    { id: "Xec6iR5", url: "" },
+                    // 25
+                    { id: "gaqAFSz", url: "" },
+                    // 26
+                    { id: "4d2hV6U", url: "" },
+                    // 27
+                    { id: "7kZUGXu", url: "" },
+                    // 28
+                    { id: "v8D3w3m", url: "" },
+                    // 29
+                    { id: "wi1UzvB", url: "" },
+                    // 30
+                    { id: "nb5PWLW", url: "" },
+                    // 31
+                    { id: "6q8KyXL", url: "" },
+                    // 32
+                    { id: "vz6tFYD", url: "" },
+                    // 33
+                    { id: "", url: "" },
+                    // 34
+                    { id: "", url: "" },
+                    // 35
+                    { id: "", url: "" },
+                    // 36
+                    { id: "", url: "" },
+                    // 37
+                    { id: "", url: "" },
+                    // 38
+                    { id: "", url: "" },
+                    // 39
+                    { id: "", url: "" },
+                    // 40
+                    { id: "", url: "" },
+                    // 41
+                    { id: "", url: "" },
+                    // 42
+                    { id: "", url: "" },
+                    // 43
+                    { id: "", url: "" },
+                    // 44
+                    { id: "", url: "" },
+                    // 45
+                    { id: "", url: "" },
+                    // 46
+                    { id: "", url: "" },
+                    // 47
+                    { id: "", url: "" },
+                    // 48
+                    { id: "", url: "" },
+                    // 49
+                    { id: "", url: "" },
+                    // 50
+                    { id: "", url: "" }
                 ]
             },
             {
@@ -485,7 +1311,68 @@
                 bgUrl: "https://xatimg.com/image/eQclCkaKDJdZ.gif",
                 prefix: "Hall-",
                 count: 30,
-                ids: ["mUyGHFF", "cgzae5r", "Dppu6pE", "2nvsLCI", "Ht5XcEc", "OettBBr", "rYCjFFq", "iJVwNxa", "5Rr1Y1j", "kZs9z55", "EbfHYIt", "QBFbahJ", "U7N9f1o", "dMwhgcn", "tmZpDTT"]
+                ids: [
+                    // 1
+                    { id: "mUyGHFF", url: "" },
+                    // 2
+                    { id: "cgzae5r", url: "" },
+                    // 3
+                    { id: "Dppu6pE", url: "" },
+                    // 4
+                    { id: "2nvsLCI", url: "" },
+                    // 5
+                    { id: "Ht5XcEc", url: "" },
+                    // 6
+                    { id: "OettBBr", url: "" },
+                    // 7
+                    { id: "rYCjFFq", url: "" },
+                    // 8
+                    { id: "iJVwNxa", url: "" },
+                    // 9
+                    { id: "5Rr1Y1j", url: "" },
+                    // 10
+                    { id: "kZs9z55", url: "" },
+                    // 11
+                    { id: "EbfHYIt", url: "" },
+                    // 12
+                    { id: "QBFbahJ", url: "" },
+                    // 13
+                    { id: "U7N9f1o", url: "" },
+                    // 14
+                    { id: "dMwhgcn", url: "" },
+                    // 15
+                    { id: "tmZpDTT", url: "" },
+                    // 16
+                    { id: "", url: "" },
+                    // 17
+                    { id: "", url: "" },
+                    // 18
+                    { id: "", url: "" },
+                    // 19
+                    { id: "", url: "" },
+                    // 20
+                    { id: "", url: "" },
+                    // 21
+                    { id: "", url: "" },
+                    // 22
+                    { id: "", url: "" },
+                    // 23
+                    { id: "", url: "" },
+                    // 24
+                    { id: "", url: "" },
+                    // 25
+                    { id: "", url: "" },
+                    // 26
+                    { id: "", url: "" },
+                    // 27
+                    { id: "", url: "" },
+                    // 28
+                    { id: "", url: "" },
+                    // 29
+                    { id: "", url: "" },
+                    // 30
+                    { id: "", url: "" }
+                ]
             },
             {
                 marquee: "◦•●◉🏆𝑮𝒊𝒇𝒔 Mixed🏆◉●•",
@@ -493,10 +1380,126 @@
                 prefix: "Mix-A-",
                 count: 60,
                 ids: [
-                    "2bISAr5", "S9MdkJ5", "7DUEwLS", "W333chJ", "Ssb3929", "RQHM46D", "lGQJNX1", "lJiLGQ8", "w4Sci6P", "ugX43iJ", 
-                    "AkNqNY1", "aSobzUt", "INt3jug", "zpFsVAz", "PJesNbS", "VO0ieCW", "kuqjWLl", "fPot2Xs", "IlobBuk", "EKEhV21", 
-                    "nmsv6jb", "IdXSX1G", "SN9H6sb", "glj9d5s", "uatKnzK", "J1rgeOX", "N9pTpyb", "BlD5Z0H", "9jFdr5h", "9jQbyrA", 
-                    "e1VjaA1", "nLUJ9zd", "3P5qIfz", "EAmV3X8", "4LqAKYX", "OiPsJkK", "bjHShWs", "2TwOTwM", "z81fxbX", "iqtI1Bu"
+                    // 1
+                    { id: "2bISAr5", url: "" },
+                    // 2
+                    { id: "S9MdkJ5", url: "" },
+                    // 3
+                    { id: "7DUEwLS", url: "" },
+                    // 4
+                    { id: "W333chJ", url: "" },
+                    // 5
+                    { id: "Ssb3929", url: "" },
+                    // 6
+                    { id: "RQHM46D", url: "" },
+                    // 7
+                    { id: "lGQJNX1", url: "" },
+                    // 8
+                    { id: "lJiLGQ8", url: "" },
+                    // 9
+                    { id: "w4Sci6P", url: "" },
+                    // 10
+                    { id: "ugX43iJ", url: "" },
+                    // 11
+                    { id: "AkNqNY1", url: "" },
+                    // 12
+                    { id: "aSobzUt", url: "" },
+                    // 13
+                    { id: "INt3jug", url: "" },
+                    // 14
+                    { id: "zpFsVAz", url: "" },
+                    // 15
+                    { id: "PJesNbS", url: "" },
+                    // 16
+                    { id: "VO0ieCW", url: "" },
+                    // 17
+                    { id: "kuqjWLl", url: "" },
+                    // 18
+                    { id: "fPot2Xs", url: "" },
+                    // 19
+                    { id: "IlobBuk", url: "" },
+                    // 20
+                    { id: "EKEhV21", url: "" },
+                    // 21
+                    { id: "nmsv6jb", url: "" },
+                    // 22
+                    { id: "IdXSX1G", url: "" },
+                    // 23
+                    { id: "SN9H6sb", url: "" },
+                    // 24
+                    { id: "glj9d5s", url: "" },
+                    // 25
+                    { id: "uatKnzK", url: "" },
+                    // 26
+                    { id: "J1rgeOX", url: "" },
+                    // 27
+                    { id: "N9pTpyb", url: "" },
+                    // 28
+                    { id: "BlD5Z0H", url: "" },
+                    // 29
+                    { id: "9jFdr5h", url: "" },
+                    // 30
+                    { id: "9jQbyrA", url: "" },
+                    // 31
+                    { id: "e1VjaA1", url: "" },
+                    // 32
+                    { id: "nLUJ9zd", url: "" },
+                    // 33
+                    { id: "3P5qIfz", url: "" },
+                    // 34
+                    { id: "EAmV3X8", url: "" },
+                    // 35
+                    { id: "4LqAKYX", url: "" },
+                    // 36
+                    { id: "OiPsJkK", url: "" },
+                    // 37
+                    { id: "bjHShWs", url: "" },
+                    // 38
+                    { id: "2TwOTwM", url: "" },
+                    // 39
+                    { id: "z81fxbX", url: "" },
+                    // 40
+                    { id: "iqtI1Bu", url: "" },
+                    // 41
+                    { id: "", url: "" },
+                    // 42
+                    { id: "", url: "" },
+                    // 43
+                    { id: "", url: "" },
+                    // 44
+                    { id: "", url: "" },
+                    // 45
+                    { id: "", url: "" },
+                    // 46
+                    { id: "", url: "" },
+                    // 47
+                    { id: "", url: "" },
+                    // 48
+                    { id: "", url: "" },
+                    // 49
+                    { id: "", url: "" },
+                    // 50
+                    { id: "", url: "" },
+                    // 51
+                    { id: "", url: "" },
+                    // 52
+                    { id: "", url: "" },
+                    // 53
+                    { id: "", url: "" },
+                    // 54
+                    { id: "", url: "" },
+                    // 55
+                    { id: "", url: "" },
+                    // 56
+                    { id: "", url: "" },
+                    // 57
+                    { id: "", url: "" },
+                    // 58
+                    { id: "", url: "" },
+                    // 59
+                    { id: "", url: "" },
+                    // 60
+                    { id: "", url: "" }
                 ]
             }
         ];
@@ -523,33 +1526,55 @@
                 const tbody = document.createElement('tbody');
                 
                 const fragment = document.createDocumentFragment();
+            
+            for(let i = 0; i < cat.count; i++) {
+                let imgSrc = defaultImg;
+                let isMissing = false;
                 
-                for(let i = 0; i < cat.count; i++) {
-                    let imgSrc = defaultImg;
+                if (i < cat.ids.length) {
+                    const item = cat.ids[i];
+                    const customUrl = String(item.url || "").trim();
+                    const id = String(item.id || "").trim();
                     
-                    if (i < cat.ids.length) {
-                        const id = cat.ids[i];
-                        if (id === "") {
-                            imgSrc = "";
-                        } else if (id.startsWith("http")) {
-                            imgSrc = id;
+                    if (customUrl !== "") {
+                        // ✅ Si url tiene contenido -> usar esa imagen directamente
+                        imgSrc = customUrl.startsWith("http") ? customUrl : "https://" + customUrl;
+                        isMissing = false;
+                    } else {
+                        // Si url está vacío -> usar el sistema actual con id
+                        if (id === "" || id.includes("AKsLGM7.png")) {
+                            isMissing = true;
+                        } else if (id.startsWith("http") || id.includes("/") || id.includes(".")) {
+                            imgSrc = id.startsWith("http") ? id : "https://" + id;
                         } else {
                             imgSrc = `https://i.imgur.com/${id}.gif`;
                         }
                     }
-
-                    // Recreación exacta del <td><div style=...> original solicitado
-                    const itemTd = document.createElement('td');
-                    itemTd.innerHTML = `
-                    <div style="text-align: center; width: 110px; height: 120px; background-color:#1b1b1b; border: 1px solid rgb(82, 82, 82); border-radius:15px; cursor: pointer; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'; this.style.borderColor='#fff'" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='rgb(82, 82, 82)'">
-                        <font color="#ffffff" style="font-family: Arial, sans-serif; font-size:13px; margin-bottom: 5px;"><b>${cat.prefix}${i + 1}</b></font> 
-                        <img src="${imgSrc}" style="max-width: 80px; max-height: 80px; object-fit: contain;" onerror="this.src='${defaultImg}'" loading="lazy"> 
-                    </div>`;
-                    
-                    fragment.appendChild(itemTd);
+                } else {
+                    isMissing = true;
                 }
+
+                // Recreación exacta del <td><div style=...> original solicitado
+                const itemTd = document.createElement('td');
                 
-                tbody.appendChild(fragment);
+                // Capa visual dinámica:
+                // Si falta la imagen, muestra el número grande.
+                // Si la imagen falla al cargar (enlace roto), el 'onerror' oculta la imagen y muestra el número.
+                const displayContent = isMissing 
+                    ? `<div style="width: 100%; height: 80px; display: flex; justify-content: center; align-items: center; color: #777; font-size: 32px; font-weight: bold; font-family: 'Agbalumo', cursive;">${i + 1}</div>`
+                    : `<img src="${imgSrc}" style="max-width: 80px; max-height: 80px; object-fit: contain;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" loading="lazy">
+                       <div style="display: none; width: 100%; height: 80px; justify-content: center; align-items: center; color: #777; font-size: 32px; font-weight: bold; font-family: 'Agbalumo', cursive;">${i + 1}</div>`;
+
+                itemTd.innerHTML = `
+                <div style="text-align: center; width: 110px; height: 120px; background-color:#1b1b1b; border: 1px solid rgb(82, 82, 82); border-radius:15px; cursor: pointer; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'; this.style.borderColor='#fff'" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='rgb(82, 82, 82)'">
+                    <font color="#ffffff" style="font-family: Arial, sans-serif; font-size:13px; margin-bottom: 5px;"><b>${cat.prefix}${i + 1}</b></font> 
+                    ${displayContent}
+                </div>`;
+                
+                fragment.appendChild(itemTd);
+            }
+            
+            tbody.appendChild(fragment);
                 table.appendChild(tbody);
                 container.appendChild(table);
             });
